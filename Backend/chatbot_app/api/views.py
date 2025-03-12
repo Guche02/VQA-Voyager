@@ -231,30 +231,6 @@ def chatbot_view(request):
 
 
 
-from django.http import JsonResponse
-from django.views.decorators.csrf import csrf_exempt
-import json
-
-@csrf_exempt
-def confirm_transcription(request):
-    chat_history = request.session.get('chat_history', [])
-    detected_objects = request.session.get('detected_objects', [])
-
-    if request.method == 'POST':
-        data = json.loads(request.body)
-        user_response = data.get('response')
-        question = data.get('question')
-
-        # Handle the transcription confirmation
-        if user_response.lower() == 'yes':
-            answer = generate_answer(question, detected_objects[0]['label'] if detected_objects else None)
-            
-        else:
-            answer = "Transcription rejected. Please try again."
-        chat_history.append({"role": "bot", "content": answer, "timestamp": timestamp})
-
-
-
 def upload_audio(request):
     print("POST request received")
     chat_history = request.session.get('chat_history', [])
