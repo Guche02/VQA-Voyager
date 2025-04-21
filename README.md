@@ -30,6 +30,7 @@ VQA Voyager is an intelligent system that enables users to ask voice-based quest
 
 
 # 1️⃣ Clone the repository
+```bash
 git@github.com:Guche02/VQA-Voyager.git
 cd VQA-Voyager
 
