@@ -29,10 +29,25 @@ VQA Voyager is an intelligent system that enables users to ask voice-based quest
 6. Response is shown on web interface and also read out using TTS.
 
 
-
-## ⚙️ Installation
-git clone https://github.com/yourusername/VQA-Voyager.git
+# 1️⃣ Clone the repository
+git@github.com:Guche02/VQA-Voyager.git
 cd VQA-Voyager
+
+# 2️⃣ Create and activate a virtual environment
+# Windows
+python -m venv venv
+venv\Scripts\activate
+
+# macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+
+# 3️⃣ Install all required dependencies
 pip install -r requirements.txt
+
+# 4️⃣ Run database migrations (if needed)
+python manage.py migrate
+
+# 5️⃣ Start the Django development server
 python manage.py runserver
 
